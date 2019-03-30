@@ -49,7 +49,8 @@ class RootController(BaseController):
         r = requests.get(f"https://jsonplaceholder.typicode.com/posts/1/comments")
         data = r.json()
 
-        get_page = int(kw['page']) if kw['page'] else 0
+        get_page = int(kw.get('page', 0))
+
         r2 = requests.get(f'https://reqres.in/api/users?page={get_page}')
 
         people = r2.json()

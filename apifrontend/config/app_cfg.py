@@ -11,6 +11,7 @@ import apifrontend
 from apifrontend import model, lib
 
 base_config = FullStackApplicationConfigurator()
+base_config.ignore_parameters = ['timestamp', 'param_name']
 
 # General configuration
 base_config.update_blueprint({
